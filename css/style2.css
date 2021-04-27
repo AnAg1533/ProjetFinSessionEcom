@@ -1,6 +1,8 @@
 *
 {
-    font-size:16px;
+    font-size:24px;
+    color:black;
+    font-weight:bold;
 }
 form
 {
@@ -50,8 +52,8 @@ form
 
 .card
 {
-    height:400px;
-    width:600px;
+    height:600px;
+    width:900px;
     display:flex;
     justify-content:space-evenly;
     align-items:center;
@@ -62,8 +64,8 @@ form
 }
 .productImage
 {
-    height:250px;
-    width:250px;
+    height:350px;
+    width:350px;
     margin:10px;
 }
 
@@ -98,22 +100,3 @@ form
 
 }
 
-.cart 
-{
-    position:fixed;
-    top:10%;
-    left:70%;
-    text-decoration:none;
-    color:#1655DC;
-    border-radius:5px;
-    border:solid #1655DC 3px;
-    padding:10px;
-    font-weight:bold;
-    
-}
-
-.cart:hover
-{
-    background:#1655DC;
-    color:white;
-}

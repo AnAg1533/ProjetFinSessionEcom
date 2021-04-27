@@ -1,7 +1,6 @@
 <?php
 
     require_once 'model/DbManager.php';
-    require_once 'view/registerView.php';
 
     $Manager = new DbManager('localhost','test','username','password');
      
@@ -17,12 +16,16 @@
     {
         ob_start();
         require_once 'view/homeView.php';
+        $content  = ob_get_clean();
+        echo $content;
     }
 
     function RegisterPage()
     {
         ob_start();
         require_once 'view/registerView.php';
+        $content  = ob_get_clean();
+        echo $content;
     }
 
     function RegisterUser()
@@ -36,6 +39,8 @@
         $user = new User($_POST['Nom'],$_POST['Prenom'],$_POST['Password'],$_POST['Email'],$_POST['Connection'],$conn);
         
         $user->Register();
+
+        
     }
 
     function LoginUser()
@@ -59,9 +64,18 @@
     }
     function Store()
     {
-        
+        ob_start();
+        require_once 'view/productsView.php';
+        $content  = ob_get_clean();
+        echo $content;
     }
-
+    function LearnMore()
+    {
+        ob_start();
+        require_once 'view/learnMoreView.php';
+        $content  = ob_get_clean();
+        echo $content;
+    }
 
 
 ?>
