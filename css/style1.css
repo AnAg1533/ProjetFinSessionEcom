@@ -1,0 +1,48 @@
+*
+{
+    font-size:16px;
+}
+form
+{
+    border:solid black 3px;
+    background:black;
+    color:white;
+}
+
+.input
+{
+    color:#1655DC;
+    border:#1655DC solid 1px;
+    border-radius:5px;
+    padding-left:15px;
+    background:none;
+    margin:5px;
+}
+
+.submit
+{
+    color:white;
+    background:#1655DC;
+
+}
+
+body
+{
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    padding-top:150px;
+}
+
+form
+{
+    margin:auto;
+    margin:20px;
+    padding:10px;
+    border-radius:5px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-direction:column;
+    box-shadow:5px 2px 5px 2px #1655DC;
+}
