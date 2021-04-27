@@ -1,7 +1,7 @@
 <?php
 
     require_once 'model/DbManager.php';
-    require_once 'model/registerView.php';
+    require_once 'view/registerView.php';
 
     $Manager = new DbManager('localhost','test','username','password');
      
