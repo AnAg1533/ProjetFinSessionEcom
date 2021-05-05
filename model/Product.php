@@ -52,10 +52,7 @@
                         echo"Upload Failure try fucking again later";
                         header("Location:./Member.php?Upload=ldsjfsmakjshdfa");
                     }
-                }
-                    
-
-                                        
+                }                    
                 
         }
 

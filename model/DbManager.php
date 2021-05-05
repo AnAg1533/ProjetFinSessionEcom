@@ -30,6 +30,37 @@
                 return $e;
             }
         }
+
+        public function GetProducts()
+        {
+            $conn = $this->Connect();
+            $sql = $conn -> query("SELECT * FROM products");
+
+            if($sql)
+            {
+                return $sql;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public function GetProduct($id)
+        {
+            $conn = $this->Connect();
+            $sql = $conn -> prepare("SELECT * FROM products WHERE id=?");
+            $sql -> execute(array($id));
+           
+            if($sql)
+            {
+                return $sql;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 
 ?>
