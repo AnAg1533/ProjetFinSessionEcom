@@ -13,7 +13,7 @@
                RegisterUser();
             }
             else if($_GET['action']=='loggedIn')
-            {
+            {   
                 Store();
             }
             else if($_GET['action']=='learnMore')
@@ -30,8 +30,6 @@
             }
             else if($_GET['action']=='membre')
             {
-
-                
                 LoginUser();
             }
            

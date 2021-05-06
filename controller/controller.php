@@ -49,34 +49,23 @@
 
     function LoginUser()
     {   
-        session_start();
-        $user = $_SESSION['username'];
-        $pwd = $_SESSION['password'];
-        
-        try {
-            if($_POST['username'] == $user && $_POST['password'] == $pwd)
-            {
-                ob_start();
-                require_once 'view/productsView.php';
-                $content  = ob_get_clean();
-                echo $content;
-            }
-        } catch (Exception $e) {
-            throw $e;
+        if(isset($_POST['username']) && isset($_POST['password']))
+        {
+            
+            $user = new User('','',$_POST['username'],$_POST['password']);
         }
-       
-        //$Manager = new DbManager('localhost','test','username','password');
-        // $Manager = new DbManager('localhost','test','root','');
-     
-        // $conn = $Manager->Connect();
-
-        // $user = new User($_POST['username'],$_POST['password'],$conn);
+        
         
 
-        // $user->Login();
+        $user->Login();
     }
     function Store()
-    {
+    {   
+        session_start();
+        if(isset($_SESSION['username']))
+        {
+            header('location:index.php');
+        }
         ob_start();
         require_once 'view/productsView.php';
         $content  = ob_get_clean();

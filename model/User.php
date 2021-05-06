@@ -40,20 +40,29 @@
 
 
         public function Login()
-        {
-            $conn = $this->connection;
-            $sql = $conn -> prepare('SELECT * FROM membre WHERE username=? AND pass=?');
-            $sql -> execute($this->username,$this->pass);
+        {   
+            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','root','');
+     
+            $conn = $Manager->Connect();
+            
+            //$conn = $this->connection;
+            $sql = $conn -> prepare('SELECT * FROM users WHERE username=? AND pass=?');
+            $sql -> execute(array($this->username,$this->password));
 
             if($sql)
             {
-                while($data = $sql->fetch())
-                {   
-                    session_start();
-                    $_SESSION['username']=$data['username'];
-                    $_SESSION['pass']=$data['pass'];
-                    header('location:index.php?action=membre');
-                } 
+               while($data=$sql->fetch())
+               {
+                   if($_POST['username']== $data['username'] && $_POST['password'] == $data['pass'])
+                   {
+                       header('location:index.php?action=loggedIn');
+                   }
+               }
+            }
+            else
+            {
+                echo "<h1>Kiss my ass</h1>";
             }
         }
 
