@@ -25,7 +25,7 @@
         {
                 $Manager = new DbManager('localhost','test','root','');
                 $conn = $Manager->Connect();
-                $sql = $conn -> prepare('INSERT INTO membre(nom,prenom,username,password) VALUES(?,?,?,?)');
+                $sql = $conn -> prepare('INSERT INTO users(nom,prenom,username,pass) VALUES(?,?,?,?)');
                 $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
                 if($sql)
                 {    
@@ -42,8 +42,8 @@
         public function Login()
         {
             $conn = $this->connection;
-            $sql = $conn -> prepare('SELECT * FROM membre WHERE username=? AND password=?');
-            $sql -> execute($this->username,$this->password);
+            $sql = $conn -> prepare('SELECT * FROM membre WHERE username=? AND pass=?');
+            $sql -> execute($this->username,$this->pass);
 
             if($sql)
             {
@@ -51,7 +51,7 @@
                 {   
                     session_start();
                     $_SESSION['username']=$data['username'];
-                    $_SESSION['password']=$data['password'];
+                    $_SESSION['pass']=$data['pass'];
                     header('location:index.php?action=membre');
                 } 
             }
