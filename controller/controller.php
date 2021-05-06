@@ -31,7 +31,7 @@
         echo $content;
     }
 
-    function RegisterUser()
+    function RegisterUser() //it works you can register a user!
     {   
         //$Manager = new DbManager('localhost','test','username','password');
         $Manager = new DbManager('localhost','test','root','');
@@ -53,13 +53,18 @@
         $user = $_SESSION['username'];
         $pwd = $_SESSION['password'];
         
-        if($_POST['username'] == $user && $_POST['password'] == $pwd)
-        {
-            ob_start();
-            require_once 'view/productsView.php';
-            $content  = ob_get_clean();
-            echo $content;
+        try {
+            if($_POST['username'] == $user && $_POST['password'] == $pwd)
+            {
+                ob_start();
+                require_once 'view/productsView.php';
+                $content  = ob_get_clean();
+                echo $content;
+            }
+        } catch (Exception $e) {
+            throw $e;
         }
+       
         //$Manager = new DbManager('localhost','test','username','password');
         // $Manager = new DbManager('localhost','test','root','');
      
