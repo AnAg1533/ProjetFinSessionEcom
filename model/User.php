@@ -6,6 +6,7 @@
         protected $prenom;
         protected $username;
         protected $password;
+        
 
 
 
@@ -15,14 +16,16 @@
                         $this->prenom = $Prenom;
                         $this->username = $UserName;
                         $this->password = $Password;
+                        
 
         }
 
 
         public function Register()
         {
-                $conn = $this->connection;
-                $sql = $conn -> prepare('INSERT INTO Membre(nom,prenom,username,password) VALUES(?,?,?,?)');
+                $Manager = new DbManager('localhost','test','root','');
+                $conn = $Manager->Connect();
+                $sql = $conn -> prepare('INSERT INTO membre(nom,prenom,username,password) VALUES(?,?,?,?)');
                 $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
                 if($sql)
                 {    
@@ -39,7 +42,7 @@
         public function Login()
         {
             $conn = $this->connection;
-            $sql = $conn -> prepare('SELECT * FROM Membre WHERE username=? AND password=?');
+            $sql = $conn -> prepare('SELECT * FROM membre WHERE username=? AND password=?');
             $sql -> execute($this->username,$this->password);
 
             if($sql)
@@ -49,7 +52,7 @@
                     session_start();
                     $_SESSION['username']=$data['username'];
                     $_SESSION['password']=$data['password'];
-                    header('location:index.php?action=Membre');
+                    header('location:index.php?action=membre');
                 } 
             }
         }

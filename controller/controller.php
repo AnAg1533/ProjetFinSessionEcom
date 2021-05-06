@@ -40,7 +40,7 @@
     
         ob_start();
 
-        $user = new User($_POST['nom'],$_POST['prenom'],$_POST['password'],$_POST['username'],$conn);
+        $user = new User($_POST['nom'],$_POST['prenom'],$_POST['username'],$_POST['password'],$conn);
         
         $user->Register();
 
@@ -49,16 +49,26 @@
 
     function LoginUser()
     {   
+       session_start();
+       $user = $_SESSION['username'];
+       $pwd = $_SESSION['password'];
         
+        if($_POST['username'] == $user && $_POST['password'] == $pwd)
+        {
+            ob_start();
+            require_once 'view/productsView.php';
+            $content  = ob_get_clean();
+            echo $content;
+        }
         //$Manager = new DbManager('localhost','test','username','password');
-        //$Manager = new DbManager('localhost','test','root','');
+        // $Manager = new DbManager('localhost','test','root','');
      
-        //$conn = $Manager->Connect();
+        // $conn = $Manager->Connect();
 
-        //$user = new User($_POST['Nom'],$_POST['Prenom'],$_POST['Password'],$_POST['Email'],$_POST['Connection'],$conn);
+        // $user = new User($_POST['username'],$_POST['password'],$conn);
         
 
-        //$user->Login();
+        // $user->Login();
     }
     function Store()
     {

@@ -28,6 +28,11 @@
             {
                 AddProduct();
             }
+            else if($_GET['action']=='membre')
+            {
+                
+                LoginUser();
+            }
            
 
         }
