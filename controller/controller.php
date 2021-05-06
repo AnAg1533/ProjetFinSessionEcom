@@ -2,8 +2,10 @@
 
     require_once 'model/DbManager.php';
     require_once 'model/Product.php';
-
-    $Manager = new DbManager('localhost','test','username','password');
+    require_once 'model/User.php';
+    
+    //$Manager = new DbManager('localhost','test','username','password');
+    $Manager = new DbManager('localhost','test','root','');
      
     $conn = $Manager->Connect();
 
@@ -31,13 +33,14 @@
 
     function RegisterUser()
     {   
-        $Manager = new DbManager('localhost','test','username','password');
+        //$Manager = new DbManager('localhost','test','username','password');
+        $Manager = new DbManager('localhost','test','root','');
      
         $conn = $Manager->Connect();
     
         ob_start();
 
-        $user = new User($_POST['Nom'],$_POST['Prenom'],$_POST['Password'],$_POST['Email'],$_POST['Connection'],$conn);
+        $user = new User($_POST['nom'],$_POST['prenom'],$_POST['password'],$_POST['username'],$conn);
         
         $user->Register();
 
@@ -47,13 +50,15 @@
     function LoginUser()
     {   
         
-        $Manager = new DbManager('localhost','test','username','password');
+        //$Manager = new DbManager('localhost','test','username','password');
+        //$Manager = new DbManager('localhost','test','root','');
      
-        $conn = $Manager->Connect();
+        //$conn = $Manager->Connect();
 
-        $user = new User($_POST['Nom'],$_POST['Prenom'],$_POST['Password'],$_POST['Email'],$_POST['Connection'],$conn);
+        //$user = new User($_POST['Nom'],$_POST['Prenom'],$_POST['Password'],$_POST['Email'],$_POST['Connection'],$conn);
         
-        $user->Login();
+
+        //$user->Login();
     }
     function Store()
     {
@@ -88,7 +93,8 @@
 
     function AddProduct()
     {   
-        $Manager = new DbManager('localhost','test','username','password');
+        //$Manager = new DbManager('localhost','test','username','password');
+        $Manager = new DbManager('localhost','test','root','');
         $conn = $Manager->Connect();
         $Produit = new Product($_POST['titre'],$_POST['prix'],$_POST['enstock'],$_FILES['photo']['name'],$_POST['couleur'],$conn);
         $Produit->Add();

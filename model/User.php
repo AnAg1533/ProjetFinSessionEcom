@@ -6,26 +6,24 @@
         protected $prenom;
         protected $username;
         protected $password;
-        protected $email;
-        protected $connection;
 
 
-        public function __construct($Nom,$Prenom,$UserName,$Password,$Email,$Connection)
+
+        public function __construct($Nom,$Prenom,$UserName,$Password)
         {
                         $this->nom = $Nom;
                         $this->prenom = $Prenom;
                         $this->username = $UserName;
                         $this->password = $Password;
-                        $this->connetion = $Connection;
-                        $this->email = $Email;
+
         }
 
 
         public function Register()
         {
                 $conn = $this->connection;
-                $sql = $conn -> prepare('INSERT INTO Membre(nom,prenom,username,password,email) VALUES(?,?,?,?,?)');
-                $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password,$this->email));
+                $sql = $conn -> prepare('INSERT INTO Membre(nom,prenom,username,password) VALUES(?,?,?,?)');
+                $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
                 if($sql)
                 {    
                      echo "<script>alert('REGISTER SUCCESFUL YOU WILL BE REDIRECTED NOW');</script>";

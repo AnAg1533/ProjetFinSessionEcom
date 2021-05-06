@@ -19,17 +19,16 @@
         <br/>
         <h1>REGISTER HERE</h1>
         <br/>
-        <input type='text' placeholder='name' class='input'required/>
+        <input type='text' placeholder='name' name='prenom' class='input'required/>
         <br/>
-        <input type='text' placeholder='last name' class='input' required/>
+        <input type='text' placeholder='last name' name='nom' class='input' required/>
         <br/>
-        <input type='number' placeholder='phone number' class='input' required/>
-        <br/>
-        <input type='email' placeholder='email' class='input' required/>
+        <input type='text' placeholder='username' name='username' class='input' required/>
+        <br/>         
+        <input type='password' placeholder='password' name='password' class='input' required/>
         <br/>
         <input type='password' placeholder='confirmation' class='input' required/>
-        <br/>
-        <input type='password' placeholder='password' class='input' required/>
+
         <br/>
         <input type='submit' placeholder='REGISTER' class='input' required/>
     
