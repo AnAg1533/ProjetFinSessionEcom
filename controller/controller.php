@@ -49,9 +49,9 @@
 
     function LoginUser()
     {   
-       session_start();
-       $user = $_SESSION['username'];
-       $pwd = $_SESSION['password'];
+        session_start();
+        $user = $_SESSION['username'];
+        $pwd = $_SESSION['password'];
         
         if($_POST['username'] == $user && $_POST['password'] == $pwd)
         {

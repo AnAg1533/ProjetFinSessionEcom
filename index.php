@@ -30,6 +30,8 @@
             }
             else if($_GET['action']=='membre')
             {
+                $_SESSION['username'] = $user;
+                $_SESSION['password'] = $pwd;
                 
                 LoginUser();
             }
