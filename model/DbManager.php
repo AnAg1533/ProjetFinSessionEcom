@@ -61,6 +61,11 @@
                 return null;
             }
         }
+
+        public function UpdateCart()
+        {
+            
+        }
     }
 
 ?>

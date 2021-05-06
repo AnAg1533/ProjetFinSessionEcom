@@ -1,0 +1,2 @@
+create table users(id INT AUTO_INCREMENT,nom VARCHAR(255),prenom VARCHAR(255),username VARCHAR(255),pass VARCHAR(255),email VARCHAR(255),PRIMARY KEY(id));
+create table products(id INT AUTO_INCREMENT,titre VARCHAR(255),enStock VARCHAR(255),photo VARCHAR(255),PRIMARY KEY(id));

@@ -1,6 +1,7 @@
 <?php
 
     require_once 'model/DbManager.php';
+    require_once 'model/Product.php';
 
     $Manager = new DbManager('localhost','test','username','password');
      
@@ -54,14 +55,6 @@
         
         $user->Login();
     }
-
-    function LoginAdmin()
-    {
-        if($_POST['username'] == 'admin' && $_POST['password'] == 'admin')
-        {
-            header('location:index.php?action=admin');
-        }
-    }
     function Store()
     {
         ob_start();
@@ -77,5 +70,28 @@
         echo $content;
     }
 
+    function Admin()
+    {
+        if($_POST['username'] == 'admin' && $_POST['password'] == 'admin')
+        {
+            ob_start();
+            $Product = new Product('','','','','','');
+            require_once 'view/adminView.php';
+            $content  = ob_get_clean();
+            echo $content;
+            
 
+            
+        }
+
+    }
+
+    function AddProduct()
+    {   
+        $Manager = new DbManager('localhost','test','username','password');
+        $conn = $Manager->Connect();
+        $Produit = new Product($_POST['titre'],$_POST['prix'],$_POST['enstock'],$_FILES['photo']['name'],$_POST['couleur'],$conn);
+        $Produit->Add();
+        echo "Product added";
+    }
 ?>

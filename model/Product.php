@@ -6,7 +6,6 @@
         protected $titre;
         protected $prix;
         protected $enStock;
-        protected $image;
         protected $coleur;
         protected $connection;
         protected $photo;
@@ -19,44 +18,71 @@
                         $this->enStock = $EnStock;
                         $this->couleur = $Couleur;
                         $this->connetion = $Connection;
-                        $this->Image = $Image;
+                        $this->photo = $Image;
         }
 
-        public function AddProduct()
-        {
-                $conn = $this->connection;
-                if(isset($_POST['upload']))
-                {
-                    $target = "uploads/".basename($_POST['upload']['name']);
-                    $sql = $conn -> prepare('INSERT INTO Products(titre,prix,image,couleur,enstock,photo) VALUES(?,?,?,?,?,?)');
-                    $sql -> execute(array($this->titre,$this->prix,$this->image,$this->couleur,$this->enStock,$this->photo));
-                if($sql)
-                {    
-                     echo "<script>alert('REGISTER SUCCESFUL YOU WILL BE REDIRECTED NOW');</script>";
-                     header('location:index.php');
-                }
-                else
-                {
-                    echo "Query Failure";
-                }
+        public function Add()
+        {   
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();    
+                $target = "uploads/".basename($_FILES['photo']['name']);
 
-                    if(move_uploaded_file($_FILES['ProfileUpload2']['tmp_name'],$target))
-                    {   
-                       
-                        echo "Moved as fuck";
-                        header("Location:./Member.php");
-                        $sql -> execute(array($_SESSION['UserId'],$_FILES['ProfileUpload2']['name']));
+                if(move_uploaded_file($_FILES['photo']['tmp_name'],$target))
+                {   
+                    echo "Moved as fuck";
+                    $sql = $conn -> prepare('INSERT INTO products(titre,prix,photo,color,enstock) VALUES(?,?,?,?,?)');
+                    $sql -> execute(array($this->titre,$this->prix,$this->photo,$this->couleur,$this->enStock));
+                    if($sql)
+                    {    
+                        echo "<script>alert('PRODUCT ADDED YOU WILL BE REDIRECTED NOW');</script>";
+                        header('location:index.php');
+                        
                     }
                     else
                     {
-                        echo"Upload Failure try fucking again later";
-                        header("Location:./Member.php?Upload=ldsjfsmakjshdfa");
+                        echo "Query Failure";
                     }
-                }                    
-                
+                }
+                else
+                {
+                    echo"Upload Failure try fucking again later";
+                }
+        }     
+        
+        public function GetAll()
+        {
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();   
+            $sql = $conn -> query('SELECT * FROM products');
+            if($sql)
+            {
+                echo "Data found";
+
+                while($data=$sql->fetch())
+                {   
+                ?>
+                    <tr>
+                        <td><?=$data['titre'];?></td>
+                        <td><?=$data['color'];?></td>
+                        <td><?=$data['enStock'];?></td>
+                        <td><?=$data['prix'];?></td>
+                        <td><img src='uploads/<?=$data['photo'];?>'/></td>
+                    </tr>
+
+                    <?php 
+                    
+                }
+
+            }
+            else
+            {
+                echo "data not found";
+            }
         }
-
-
+                
     }
+
+
+    
 
 ?>

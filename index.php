@@ -16,9 +16,17 @@
             {
                 Store();
             }
-            else if($_GET['action']='learnMore')
+            else if($_GET['action']=='learnMore')
             {
                 LearnMore();
+            }
+            else if($_GET['action']=='admin')
+            {
+                Admin();
+            }
+            else if($_GET['action']=='addProduct')
+            {
+                AddProduct();
             }
 
         }
