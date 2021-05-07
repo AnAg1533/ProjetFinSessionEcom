@@ -113,8 +113,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `titre`, `enStock`, `photo`, `color`, `prix`, `price`) VALUES
-(12, 'Condoms', '300', 'illuminati.png', 'RED', '40', NULL),
-(13, 'Condoms', '20', 'card3.png', 'Yellow', '20', NULL);
+(12, 'Rare Card', '9', 'illuminati.png', 'black', '49', NULL),
+(13, 'Commun Card', '44', 'card3.png', 'white', '22', NULL);
+(13, 'Trap Card', '23', 'card2.png', 'black', '10', NULL);
 
 -- --------------------------------------------------------
 
