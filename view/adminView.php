@@ -19,7 +19,7 @@
     <input  type='text' name='couleur' placeholder='couleur' class='input'> <br/>
     <input  type='text' name='enstock' placeholder='en stock' class='input'> <br/>
     <input  type='text' name='prix' placeholder='prix' class='input'> <br/>
-    <input  type='file' name='photo' >   <br/>
+    <input  type='file'  name='photo' >   <br/>
     <input type='submit' placeholder='AJOUTER' name='submit' class='submit'/> <br/>
 </form>
       </div>
@@ -61,7 +61,7 @@ $User->GetAll();
 
 
 
-
+<img src='images/logo.png' class='logo' />
 
 
 

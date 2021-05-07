@@ -52,13 +52,12 @@ body {
 }
 
 .logo {
-    position: fixed;
     top: 1%;
     left: 1%;
 }
 
 .cart {
-    position: fixed;
+    position: relative;
     top: 10%;
     left: 70%;
     text-decoration: none;

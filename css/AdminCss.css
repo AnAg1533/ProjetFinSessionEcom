@@ -2,6 +2,12 @@
     font-size: 16px;
 }
 
+.logo {
+    position: fixed;
+    top: 1%;
+    left: 1%;
+}
+
 body {
     justify-content: space-evenly;
     align-items: center;
@@ -73,7 +79,7 @@ table {
     margin-top: 20px;
 }
 
-img {
+.img {
     height: 120px;
     width: 120px;
 }

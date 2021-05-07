@@ -68,7 +68,7 @@
                         <td><?=$data['color'];?></td>
                         <td><?=$data['enStock'];?></td>
                         <td><?=$data['prix'];?></td>
-                        <td><img src='uploads/<?=$data['photo'];?>'/></td>
+                        <td><img class='img' src='uploads/<?=$data['photo'];?>'/></td>
                         <td><a href='index.php?delProd&id=<?=$data['id'];?>'>DELETE</a>
                     </tr>
 
