@@ -30,7 +30,7 @@
         <input type='password' placeholder='confirmation' class='input' required/>
 
         <br/>
-        <input type='submit' placeholder='REGISTER' class='input' required/>
+        <input type='submit' placeholder='REGISTER' class='submit' required/>
     
     </form>
 

@@ -1,7 +1,5 @@
 * {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
+    font-size: 16px;
 }
 
 body {
@@ -13,21 +11,22 @@ body {
 }
 
 .card {
-    height: 600px;
-    width: 900px;
+    height: 400px;
+    width: 600px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     padding: 20px;
     margin: 50px;
-    background-color: black;
     border: blue solid 1px;
+    background-color: #0a0a0a;
+    color: white;
 }
 
 .productImage {
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     margin: 10px;
 }
 
@@ -56,4 +55,21 @@ body {
     position: fixed;
     top: 1%;
     left: 1%;
+}
+
+.cart {
+    position: fixed;
+    top: 10%;
+    left: 70%;
+    text-decoration: none;
+    color: #1655DC;
+    border-radius: 5px;
+    border: solid #1655DC 3px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.cart:hover {
+    background: #1655DC;
+    color: white;
 }

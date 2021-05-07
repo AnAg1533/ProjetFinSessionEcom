@@ -58,7 +58,7 @@
             $sql = $conn -> query('SELECT * FROM products');
             if($sql)
             {
-                echo "Data found";
+                
 
                 while($data=$sql->fetch())
                 {   
