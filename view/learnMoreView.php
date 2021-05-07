@@ -15,7 +15,7 @@
 
 
 <body>
-<h1 class='logo'>E-COMMERCE.ORG</h1>
+<img src='images/logo.png' class='logo' />
 <div class='prod'>
     <?php while($data= $sql->fetch()){?>
     
@@ -28,7 +28,7 @@
 
         <h2><?=$data['titre']?></h2>
 
-        <h3>PRIX : <?=$data['price']?></h3>
+        <h3>PRIX : <?=$data['prix']?></h3>
         <h3>EN STOCK : <?=$data['enStock']?></h3>
         <h3>COULEUR : <?=$data['color']?></h3>
 

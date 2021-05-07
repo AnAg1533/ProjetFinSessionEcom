@@ -5,29 +5,71 @@
 body {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    padding-top: 150px;
     background-color: black;
 }
 
-form {
-    margin: auto;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 5px;
+.card {
+    height: 400px;
+    width: 600px;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-}
-
-.input {
-    color: #1655DC;
-    border: #1655DC solid 1px;
-    border-radius: 5px;
-    padding-left: 15px;
-    background: none;
-    margin: 5px;
-}
-
-.submit {
+    flex-direction: row;
+    padding: 20px;
+    margin: 50px;
+    border: blue solid 1px;
+    background-color: #0a0a0a;
     color: white;
+}
+
+.productImage {
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+}
+
+.prod {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.learnMore {
+    color: #1655DC;
+    border: solid #1655DC 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.learnMore:hover {
     background: #1655DC;
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    position: fixed;
+    top: 1%;
+    left: 1%;
+}
+
+.cart {
+    position: fixed;
+    top: 10%;
+    left: 70%;
+    text-decoration: none;
+    color: #1655DC;
+    border-radius: 5px;
+    border: solid #1655DC 3px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.cart:hover {
+    background: #1655DC;
+    color: white;
 }

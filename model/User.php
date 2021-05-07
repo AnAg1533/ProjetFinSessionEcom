@@ -23,8 +23,8 @@
 
         public function Register()
         {
-                //$Manager = new DbManager('localhost','test','root','');
-                $Manager = new DbManager('localhost','test','username','password');
+                $Manager = new DbManager('localhost','test','root','');
+                //$Manager = new DbManager('localhost','test','username','password');
                 $conn = $Manager->Connect();
                 $sql = $conn -> prepare('INSERT INTO users(nom,prenom,username,pass) VALUES(?,?,?,?)');
                 $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
@@ -42,8 +42,8 @@
 
         public function GetAll()
         {   
-            //$Manager = new DbManager('localhost','test','root','');
-            $Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
+            //$Manager = new DbManager('localhost','test','username','password');
             $conn = $Manager->Connect();
             $sql = $conn -> query('SELECT * FROM users');
             //$sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
@@ -73,8 +73,8 @@
 
         public function Delete($id)
         {
-            $Manager = new DbManager('localhost','test','username','password');
-            //$Manager = new DbManager('localhost','test','root','');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
      
             $conn = $Manager->Connect();
             
@@ -86,8 +86,8 @@
 
         public function Login()
         {   
-            $Manager = new DbManager('localhost','test','username','password');
-            //$Manager = new DbManager('localhost','test','root','');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
      
             $conn = $Manager->Connect();
             

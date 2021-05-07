@@ -23,7 +23,8 @@
 
         public function Add()
         {   
-            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
             $conn = $Manager->Connect();    
                 $target = "uploads/".basename($_FILES['photo']['name']);
 
@@ -51,7 +52,8 @@
         
         public function GetAll()
         {
-            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
             $conn = $Manager->Connect();   
             $sql = $conn -> query('SELECT * FROM products');
             if($sql)
@@ -84,7 +86,8 @@
 
         public function GetAllS()
         {
-            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
             $conn = $Manager->Connect();   
             $sql = $conn -> query('SELECT * FROM products');
             if($sql)
@@ -101,7 +104,8 @@
 
         public function Del($id)
         {
-            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
             $conn = $Manager->Connect();   
             $sql = $conn -> prepare('DELETE FROM products WHERE id=?');
             $sql -> execute(array($id));
@@ -110,7 +114,8 @@
 
         public function GetOne()
         {
-            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','username','password');
+            $Manager = new DbManager('localhost','test','root','');
             $conn = $Manager->Connect();   
             $sql = $conn -> prepare('SELECT * FROM products WHERE id=?');
             $sql ->execute(array($_GET['id']));
