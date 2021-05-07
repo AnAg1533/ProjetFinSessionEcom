@@ -23,7 +23,8 @@
 
         public function Register()
         {
-                $Manager = new DbManager('localhost','test','root','');
+                //$Manager = new DbManager('localhost','test','root','');
+                $Manager = new DbManager('localhost','test','username','password');
                 $conn = $Manager->Connect();
                 $sql = $conn -> prepare('INSERT INTO users(nom,prenom,username,pass) VALUES(?,?,?,?)');
                 $sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
@@ -38,6 +39,50 @@
                 }
         }
 
+
+        public function GetAll()
+        {   
+            //$Manager = new DbManager('localhost','test','root','');
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();
+            $sql = $conn -> query('SELECT * FROM users');
+            //$sql -> execute(array($this->nom,$this->prenom,$this->username,$this->password));
+            if($sql)
+            {    
+                 echo "<script>alert('REGISTER SUCCESFUL YOU WILL BE REDIRECTED NOW');</script>";
+                    while($data=$sql->fetch())
+                    {
+                 ?>
+            <tr>
+                 <td><?=  $data['nom']?> </td>
+                 <td><?=  $data['prenom']?> </td>
+                 <td><?=  $data['username']?> </td>
+                 <td><?=  $data['pass']?> </td>
+                 <td><a href='index.php?action=delUser&id=<?= $data['id']?>'>DELETE</a></td>
+            </tr>
+                    
+                 <?php
+                    } 
+                 
+            }
+            else
+            {
+                echo "Query Failure";
+            }
+        }
+
+        public function Delete($id)
+        {
+            $Manager = new DbManager('localhost','test','username','password');
+            //$Manager = new DbManager('localhost','test','root','');
+     
+            $conn = $Manager->Connect();
+            
+            //$conn = $this->connection;
+            $sql = $conn -> prepare('DELETE FROM users WHERE id=?');
+            $sql -> execute(array($_GET['id']));
+
+        }
 
         public function Login()
         {   

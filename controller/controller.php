@@ -79,6 +79,8 @@
     function LearnMore()
     {
         ob_start();
+        $u = new Product('','','','','','');
+        $sql = $u -> GetOne($_GET['id']);
         require_once 'view/learnMoreView.php';
         $content  = ob_get_clean();
         echo $content;
@@ -90,11 +92,10 @@
         {
             ob_start();
             $Product = new Product('','','','','','');
+            $User = new User('','','','');
             require_once 'view/adminView.php';
             $content  = ob_get_clean();
             echo $content;
-            
-
             
         }
 
@@ -108,5 +109,11 @@
         $Produit = new Product($_POST['titre'],$_POST['prix'],$_POST['enstock'],$_FILES['photo']['name'],$_POST['couleur'],$conn);
         $Produit->Add();
         echo "Product added";
+    }
+    function DelUser()
+    {
+        $u = new User('','','','');
+        $u->Delete($_GET['id']);
+        header('location:index.php');
     }
 ?>

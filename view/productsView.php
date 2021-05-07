@@ -36,7 +36,7 @@
         <h3>EN STOCK : <?=$data['enStock']?></h3>
         <h3>COULEUR : <?=$data['color']?></h3>
 
-        <a href='index.php?action=SHOP&id=' class='learnMore'>SHOP</a>
+        <a href='index.php?action=SHOP&id=<?=$data['id']?>' class='learnMore'>SHOP</a>
 
     </div>
     

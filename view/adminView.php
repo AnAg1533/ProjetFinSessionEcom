@@ -73,6 +73,27 @@
 
 </table>
 
+<table>
+  <tr>
+      <td>Name</td>
+      <td>LASTNAME </td>
+      <td>USERNAME</td>
+      <td>PASSWORD</td>
+  </tr>
+  <?php 
+
+$User->GetAll();
+
+?>
+</table>
+
+
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
 
 
 

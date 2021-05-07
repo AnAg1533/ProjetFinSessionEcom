@@ -96,6 +96,23 @@
                 echo "data not found";
             }
         }
+
+
+        public function GetOne()
+        {
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();   
+            $sql = $conn -> prepare('SELECT * FROM products WHERE id=?');
+            $sql ->execute(array($_GET['id']));
+            if($sql)
+            {
+               return $sql;
+            }
+            else
+            {
+                echo "data not found";
+            }
+        }
                 
     }
 

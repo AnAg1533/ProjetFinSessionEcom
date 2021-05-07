@@ -16,7 +16,7 @@
             {   
                 Store();
             }
-            else if($_GET['action']=='learnMore')
+            else if($_GET['action']=='SHOP' && isset($_GET['id']))
             {
                 LearnMore();
             }
@@ -31,6 +31,10 @@
             else if($_GET['action']=='membre')
             {
                 LoginUser();
+            }
+            else if($_GET['action']=='delUser' && isset($_GET['action']))
+            {
+                DelUser();
             }
            
 
