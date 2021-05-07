@@ -25,157 +25,28 @@
 
 
 <div class='prod'>
+<?php   while($data=$sql->fetch()){?>
     <div class='card'>
-
-    <img src='images/condom.png' class='productImage' />
+    
+    <img src='uploads/<?=$data['photo']?>' class='productImage' />
     <div>
-        <h2>DUREX STRAWBERRY CONDOMS</h2>
+        <h2><?=$data['titre']?></h2>
 
-        <h3>PRIX : 2$ </h3>
-        <h3>EN STOCK : 50000</h3>
-        <h3>COULEUR : RED TRANSPARENT</h3>
+        <h3>PRIX : <?=$data['price']?></h3>
+        <h3>EN STOCK : <?=$data['enStock']?></h3>
+        <h3>COULEUR : <?=$data['color']?></h3>
 
-        <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
+        <a href='index.php?action=SHOP&id=' class='learnMore'>SHOP</a>
 
     </div>
     
     </div>
-    <div class='card'>
 
-<img src='images/condom.png' class='productImage'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id='>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage' class='learnMore'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
-<div class='card'>
-
-<img src='images/condom.png' class='productImage'/>
-<div>
-    <h2>DUREX STRAWBERRY CONDOMS</h2>
-
-    <h3>PRIX : 2$ </h3>
-    <h3>EN STOCK : 50000</h3>
-    <h3>COULEUR : RED TRANSPARENT</h3>
-
-    <a href='index.php?action=learnMore?id=' class='learnMore'>LEARN MORE</a>
-
-</div>
-
-</div>
 </div><!--PROD-->
+
+<?php 
+    }
+?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 

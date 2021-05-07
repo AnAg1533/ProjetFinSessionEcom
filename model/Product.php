@@ -79,6 +79,23 @@
                 echo "data not found";
             }
         }
+
+
+        public function GetAllS()
+        {
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();   
+            $sql = $conn -> query('SELECT * FROM products');
+            if($sql)
+            {
+               return $sql;
+
+            }
+            else
+            {
+                echo "data not found";
+            }
+        }
                 
     }
 

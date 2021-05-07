@@ -50,9 +50,9 @@
     function LoginUser()
     {   
         if(isset($_POST['username']) && isset($_POST['password']))
-        {
-            
+        {  
             $user = new User('','',$_POST['username'],$_POST['password']);
+            $user->Login();
         }
         
         
@@ -64,12 +64,17 @@
         session_start();
         if(isset($_SESSION['username']))
         {
-            header('location:index.php');
+            //header('location:index.php');
         }
+
+        $u = new Product('','','','','','');
+        $sql = $u -> GetAllS();
         ob_start();
         require_once 'view/productsView.php';
         $content  = ob_get_clean();
         echo $content;
+
+        
     }
     function LearnMore()
     {

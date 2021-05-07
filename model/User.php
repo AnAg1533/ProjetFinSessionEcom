@@ -54,11 +54,10 @@
             {
                while($data=$sql->fetch())
                {
-                   if($_POST['username']== $data['username'] && $_POST['password'] == $data['pass'])
-                   {
-                       header('location:index.php?action=loggedIn');
-                   }
+                   session_start();
+                   $_SESSION['username'] = $data['username'];
                }
+               header('location:index.php?action=loggedIn');
             }
             else
             {
