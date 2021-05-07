@@ -36,6 +36,10 @@
             {
                 DelUser();
             }
+            else if($_GET['action']=='delProd' && isset($_GET['action']))
+            {
+                Del();
+            }
            
 
         }

@@ -67,6 +67,7 @@
                         <td><?=$data['enStock'];?></td>
                         <td><?=$data['prix'];?></td>
                         <td><img src='uploads/<?=$data['photo'];?>'/></td>
+                        <td><a href='index.php?delProd&id=<?=$data['id'];?>'>DELETE</a>
                     </tr>
 
                     <?php 
@@ -97,6 +98,15 @@
             }
         }
 
+
+        public function Del($id)
+        {
+            $Manager = new DbManager('localhost','test','username','password');
+            $conn = $Manager->Connect();   
+            $sql = $conn -> prepare('DELETE FROM products WHERE id=?');
+            $sql -> execute(array($id));
+            header('location:index.php');
+        }
 
         public function GetOne()
         {

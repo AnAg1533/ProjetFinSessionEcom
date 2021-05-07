@@ -116,4 +116,11 @@
         $u->Delete($_GET['id']);
         header('location:index.php');
     }
+
+    function Del()
+    {
+        $u = new Product('','','','','','');
+        $u->Del($_GET['id']);
+        header('location:index.php');
+    }
 ?>
