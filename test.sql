@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2021 at 08:22 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: May 07, 2021 at 08:28 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `test1`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
@@ -54,19 +54,6 @@ CREATE TABLE `membre` (
   `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `membre`
---
-
-INSERT INTO `membre` (`id`, `nom`, `prenom`, `username`, `password`) VALUES
-(1, 'SAD', 'ASD', 'ASD', 'ASD'),
-(2, 'SAD', 'ASD', 'ASD', 'ASD'),
-(3, 'Anas', 'AG', 'aezakmi', '123'),
-(4, 'Anas', 'Ait Graine', 'H2A 2A9', 'aezakmi'),
-(5, 'Anas', 'AG', 'aezakmi', '123'),
-(6, 'Anas', 'AG', 'AAG', '123'),
-(7, 'Anas', 'AitGraine', 'AnAg1234', '12345');
-
 -- --------------------------------------------------------
 
 --
@@ -80,17 +67,6 @@ CREATE TABLE `posts` (
   `destinataire` varchar(255) DEFAULT NULL,
   `date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `description`, `auteur`, `destinataire`, `date`) VALUES
-(13, 'Hey there you fag', 'Johnny', 'aezakmi', '2021-03-04 07:31:11'),
-(14, 'John Cena', 'AAG', 'aezakmi', '2021-03-04 08:07:18'),
-(15, 'John Cena', 'AAG', 'aezakmi', '2021-03-04 08:08:14'),
-(16, 'Hey there anas', 'admin', 'AAG', '2021-03-04 11:17:58'),
-(17, 'Salut Mr. Anas Ait graine', 'AAG', 'AAG', '2021-03-04 11:41:41');
 
 -- --------------------------------------------------------
 
@@ -113,9 +89,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `titre`, `enStock`, `photo`, `color`, `prix`, `price`) VALUES
-(12, 'Rare Card', '9', 'illuminati.png', 'black', '49', NULL),
-(13, 'Commun Card', '44', 'card3.png', 'white', '22', NULL);
-(14, 'Trap Card', '23', 'card2.png', 'black', '10', NULL);
+(14, 'Figurine', '1', 'Character.png', 'Multiple coleurs', '10 000', NULL),
+(17, 'GokuVsThanos Comics', '1', 'GokuVsStones.jpg', 'Multiple coleurs', '15 000$', NULL),
+(18, 'Mortal Combat V', '5', '71affbd7364126b082f6ab8133d48abb.jpg', 'n/a', '50$', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,6 +107,13 @@ CREATE TABLE `users` (
   `pass` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `nom`, `prenom`, `username`, `pass`, `email`) VALUES
+(1, 'bob', 'baba', 'baba', 'baba', NULL);
 
 --
 -- Indexes for dumped tables
@@ -192,13 +175,13 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
